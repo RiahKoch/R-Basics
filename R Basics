@@ -1,0 +1,113 @@
+#Things to Note about R 
+#It's case sensitive X!=x
+#It's object oriented, you'll create variables or objects, change and manipulate them
+
+#Use R to
+#Ask True or False questions
+4>5
+7+8==14
+
+#Do basic math
+1+1
+6-3
+
+#setting a variable "<-" variable <- value assigned
+# '=' also works to assign a value
+# '<-' was originally the only way to assign a value, distinguishes from '=' or '==' for equal
+
+x <- 9
+y <- x/2
+x
+y
+
+# T and F are shorthand for TRUE FALSE
+# Although I've had some issues where R wanted it written out. I haven't figured out what causes that.
+x <- T
+x
+
+# repeat rep()
+# put a questionmark in front of something for help, as well as the format
+# put double question mark ?? in front to make it not case sensitive and explore other libraries
+?rep
+# rep(what you want repeated, 
+rep(1:3,3)
+  1,2,3,1,2,3,1,2,3
+rep("hey", time=3)
+sqrt(25)
+?sum
+help(sum)
+sum(1,4,6)
+example(sum)
+
+
+#Vector
+#vector:list of values, does not have to be numbers, 
+#they just need to be the same type
+#c() = combine
+c(7,8,9)
+c("d","o","g")
+c('c','a', 't')
+
+8:12
+seq(8,12)
+seq(8,12,.1)
+seq(9,5)
+#once we create a vector we can acess it's individual components
+sentence <- c("walk", "the", "dog")
+sentence
+sentence[3]
+#you can also update a vector as you go
+sentence[3]<-"plank"
+sentence
+#or add items to the vector
+sentence[4] <- "now"
+sentence[c(2,4)]
+
+#you can assign names to the vector elements
+#create a new vector with 3 integers, then name them
+ranks <- 1:3
+names(ranks) <- c("first","second","third")
+ranks
+ranks['first']
+ranks["third"]<-4
+ranks["third"]
+ranks
+
+#lets use vectors to make a bar plot
+income<- c(11,14,17,18)
+barplot(income)
+?barplot
+names(income)<- c("Store 1", "Store 2", "Store 3", "Store 4")
+barplot(income)
+names(income)<- c("chipotle", "Rainbow", "Noodle Co", "Old Chicago")
+barplot(income)
+barplot(1:100)
+
+
+#Vector Math
+z <- c(2,4,5)
+z+1
+z/2
+2*z
+y <- c(1,1,2)
+2+y
+2-y
+y==c(1,1,1)
+log(y)
+sqrt(y)
+
+#scatterplot
+x<- seq(1,10, 0.1)
+y<- sin(x)
+plot(x,y)
+#first variable input goes to the x axis, 2nd variable goes on the y
+plot(y,x)
+v <- -10:10
+absv = abs(v)
+plot(v,absv)
+
+# Missing values -> NA
+a <- c(1,3,NA,7,9)
+sum(a)
+help(sum)
+sum(a,na.rm=TRUE)
